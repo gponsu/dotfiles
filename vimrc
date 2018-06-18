@@ -1,0 +1,94 @@
+" ==================== 
+" Plugins 
+" ==================== 
+ 
+call plug#begin('~/.local/share/nvim/plugged')
+
+" Command-line fuzzy finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
+
+" A dark Vim/Neovim color scheme
+Plug 'joshdick/onedark.vim'
+
+" A collection of language packs for Vim
+Plug 'sheerun/vim-polyglot'
+
+" Asynchronous Lint Engine
+Plug 'w0rp/ale'
+
+" Dark powered asynchronous completion framework
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+" Support for expanding abbreviations similar to emmet 
+Plug 'mattn/emmet-vim'
+
+" Preview colours in source code while editing
+Plug 'ap/vim-css-color'
+
+" Shows a git diff in sign column
+Plug 'mhinz/vim-signify'
+
+" An extensible & universal comment plugin
+Plug 'tomtom/tcomment_vim'
+
+call plug#end()
+
+" ==================== 
+" General 
+" ==================== 
+
+" Theme
+syntax on
+colorscheme onedark
+
+" Use 24-bit (true-color) mode
+set termguicolors
+
+" Show line numbers
+set number
+
+" ==================== 
+" Text, tab and indent
+" ==================== 
+
+" Use spaces instead of tabs
+set expandtab
+
+" Be smart ;)
+set smarttab
+set smartindent
+
+" 1 tab == 2 spaces
+set shiftwidth=2
+set tabstop=2
+
+" Break lines at word to 80 cols
+set linebreak
+set textwidth=80
+
+" Auto-indent new lines
+set autoindent
+
+" ==================== 
+" Turn off swap files 
+" ==================== 
+
+set nobackup
+set noswapfile
+set nowb
+
+" ==================== 
+" Plugins config 
+" ==================== 
+
+" Asynchronous Lint Engine
+let g:ale_fixers = ['prettier', 'eslint']
+let g:ale_fix_on_save = 1
+" let g:ale_fixers = {
+" \  'javascript': ['prettier'],
+" \  'typescript': ['prettier'],
+" \}
+
+" Use deoplete
+let g:deoplete#enable_at_startup = 1

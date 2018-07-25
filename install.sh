@@ -5,7 +5,7 @@ INSTALL_DIR=$HOME/.dotfiles
 echo "=> Installing plugin managers..."
 command curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim &> /dev/null
-command curl -fLo antigen.zsh git.io/antigen &> /dev/null
+command curl -fLo ~/.antigen/antigen.zsh --create-dirs git.io/antigen &> /dev/null
 command git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm &> /dev/null
 
 

@@ -8,9 +8,9 @@ declare -A colors=(
 INSTALL_DIR=$HOME/.local/share/dotfiles
 
 echo "${colors[cyan]}=> Installing plugin managers...${colors[default]}"
-command curl -fLo ~/.antigen/antigen.zsh --create-dirs git.io/antigen
 command curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+command curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
 echo "${colors[cyan]}=> Downloading dotfiles from git to '$INSTALL_DIR'...${colors[default]}"
 command git -c advice.detachedHead=false clone --recursive \
